@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>5fb8d08c-4596-492e-9bb5-4c3f71287dc8</PackageIdentityName>
     <PackageIdentityPublisher>CN=sy200</PackageIdentityPublisher>
-    <IntermediateOutputPath>G:\VS_Projects\Todo\Todo\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>F:\CODE\WinUWPTraining\Todo\Todo\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -25,16 +25,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="G:\VS_Projects\Todo\Todo\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-08T17:45:31.806</Modified>
+      <Modified>2017-03-14T09:11:15.473</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\bin\x86\Debug\Todo.exe">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Debug\Todo.exe">
       <PackagePath>entrypoint\Todo.exe</PackagePath>
-      <Modified>2017-03-08T17:45:30.203</Modified>
+      <Modified>2017-03-14T09:11:14.892</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sy200\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -492,64 +492,64 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T15:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\Assets\background.jpg">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\Assets\background.jpg">
       <PackagePath>Assets\background.jpg</PackagePath>
       <Modified>2017-03-08T17:44:24.589</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-03-07T16:49:17.647</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2017-03-02T06:25:51.555</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-02T06:25:51.555</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-02T06:25:51.555</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-02T06:25:51.555</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-02T06:25:51.555</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-02T06:25:51.555</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-02T06:25:51.555</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\bin\x86\Debug\Todo.xr.xml">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Debug\Todo.xr.xml">
       <PackagePath>Todo.xr.xml</PackagePath>
-      <Modified>2017-03-08T14:53:36.949</Modified>
+      <Modified>2017-03-14T09:11:14.670</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-03-07T06:40:57.901</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-08T17:45:31.257</Modified>
+      <Modified>2017-03-14T09:11:15.241</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\VS_Projects\Todo\Todo\bin\x86\Debug\Core\Todo.exe">
+    <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Debug\Core\Todo.exe">
       <PackagePath>Todo.exe</PackagePath>
-      <Modified>2017-03-08T17:45:31.803</Modified>
+      <Modified>2017-03-14T09:11:15.470</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

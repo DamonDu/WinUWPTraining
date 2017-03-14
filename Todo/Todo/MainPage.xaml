@@ -9,11 +9,36 @@
 
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton x:Name="DeleteAppBarButton" Icon="Add" Label="Add" Click="AddAppBarButton_Click"/>
+            <AppBarButton x:Name="AddAppBarButton" Icon="Add" Label="Add" Click="AddAppBarButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
     
     <Grid Background="{ThemeResource AppBarBackgroundThemeBrush}">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualStateMin0">
+                    <VisualState.Setters>
+                        <Setter Target="ToDoListDetailView.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="ToDoListView.(Grid.ColumnSpan)" Value="2"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                
+                <VisualState x:Name="VisualStateMin800">
+                    <VisualState.Setters>
+                        <Setter Target="ToDoListDetailView.(UIElement.Visibility)" Value=""/>
+                        <Setter Target="AddAppBarButton.(Click)" Value=""/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -22,9 +47,13 @@
         <TextBlock x:Name="textBlock" Margin="10" Grid.Row="0" Text="Todos" Style="{StaticResource HeaderTextBlockStyle}"/>
 
         <Grid Grid.Row="1">
-            <ScrollViewer Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Margin="20" Grid.Column="0" x:Name="ToDoListView">
                 <StackPanel>
-                    
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="42"/>
@@ -71,6 +100,23 @@
                 </StackPanel>
             </ScrollViewer>
 
+            <Grid x:Name="ToDoListDetailView" Grid.Column="1" >
+                <ScrollViewer>
+                    <StackPanel>
+                        <Image  x:Name="selectPicture"  Source="Assets/background.jpg" Width="350" Height="180" Stretch="UniformToFill"/>
+                        <RelativePanel Width="350">
+                            <AppBarButton x:Name="SelectPictureButton" Icon="Pictures" Label="select" RelativePanel.AlignRightWithPanel="True" Click="SelectPictureButton_Click"/>
+                        </RelativePanel>
+                        <TextBox x:Name="title" Width="350" Header="Title" Margin="0,12,0,0" />
+                        <TextBox x:Name="details" Width="350" Height="96" Margin="0,12,0,0" Header="Details" />
+                        <DatePicker x:Name="datePicker" Width="350" Margin="0,12,0,0" Header="Due Date" HorizontalAlignment="Center" />
+                        <RelativePanel Width="350" Margin="0,24,0,0">
+                            <Button x:Name="createButton" Content="Create" Click="createButton_Click"></Button>
+                            <Button x:Name="CancelButton" Content="Cancel" RelativePanel.AlignRightWithPanel="True" Click="CancelButton_Click"></Button>
+                        </RelativePanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

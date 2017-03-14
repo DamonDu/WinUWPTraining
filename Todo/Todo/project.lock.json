@@ -21962,10 +21962,10 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "G:\\VS_Projects\\Todo\\Todo\\Todo.csproj",
+      "projectUniqueName": "F:\\CODE\\WinUWPTraining\\Todo\\Todo\\Todo.csproj",
       "projectName": "Todo",
-      "projectPath": "G:\\VS_Projects\\Todo\\Todo\\Todo.csproj",
-      "projectJsonPath": "G:\\VS_Projects\\Todo\\Todo\\project.json",
+      "projectPath": "F:\\CODE\\WinUWPTraining\\Todo\\Todo\\Todo.csproj",
+      "projectJsonPath": "F:\\CODE\\WinUWPTraining\\Todo\\Todo\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {
