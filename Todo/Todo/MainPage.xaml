@@ -5,11 +5,13 @@
     xmlns:local="using:Todo"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    xmlns:md ="using:Todo.DataModel"
+    >
 
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton x:Name="AddAppBarButton" Icon="Add" Label="Add" Click="AddAppBarButton_Click"/>
+            <AppBarButton x:Name="AddAppBarButton" Icon="Add" Label="Add" IsEnabled="True" Click="AddAppBarButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
     
@@ -29,8 +31,7 @@
                 
                 <VisualState x:Name="VisualStateMin800">
                     <VisualState.Setters>
-                        <Setter Target="ToDoListDetailView.(UIElement.Visibility)" Value=""/>
-                        <Setter Target="AddAppBarButton.(Click)" Value=""/>
+                        <Setter Target="AddAppBarButton.(Control.IsEnabled)" Value="False"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
@@ -52,71 +53,58 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <ScrollViewer Margin="20" Grid.Column="0" x:Name="ToDoListView">
-                <StackPanel>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="42"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
+            <ListView Margin="20" Grid.Column="0" x:Name="ToDoListView" ItemsSource="{x:Bind ViewModel.AllItems}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="md:TodoListItem">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="42"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
 
-                        <CheckBox Name='CheckBox' Grid.Column="0" VerticalAlignment="Center" Height="32" Width="32" Click="CheckBox_Click" />
-                        <Image Grid.Column="1" Source="Assets/background.jpg" Height="90" Width="90" Margin="0,3,12,7"/>
-                        <TextBlock Grid.Column="2" Text="完成作业" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal" FontSize="15" LineHeight="20" TextWrapping="Wrap" />
-                        <Line Name="Line" Visibility="Collapsed" Grid.Column="2" Stretch="Fill" Stroke="Black" StrokeThickness="2" X1="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"  />
-                        <AppBarButton Grid.Column="3" Icon="Setting" IsCompact="True" VerticalAlignment="Center">
-                            <AppBarButton.Flyout>
-                                <MenuFlyout>
-                                    <MenuFlyoutItem Text="Edit"/>
-                                    <MenuFlyoutItem Text="Delete"/>
-                                </MenuFlyout>
-                            </AppBarButton.Flyout>
-                        </AppBarButton>
-                    </Grid>
+                            <CheckBox Name='CheckBox' Grid.Column="0" VerticalAlignment="Center" Height="32" Width="32" Click="CheckBox_Click" />
+                            <Image Grid.Column="1" Source="Assets/background.jpg" Height="90" Width="90" Margin="0,3,12,7"/>
+                            <TextBlock Grid.Column="2" Text="{x:Bind title}" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal" FontSize="15" LineHeight="20" TextWrapping="Wrap" />
+                            <Line Name="Line" Visibility="Collapsed" Grid.Column="2" Stretch="Fill" Stroke="Black" StrokeThickness="2" X1="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"  />
+                            <AppBarButton Grid.Column="3" Icon="Setting" IsCompact="True" VerticalAlignment="Center">
+                                <AppBarButton.Flyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem Text="Edit"/>
+                                        <MenuFlyoutItem Text="Delete"/>
+                                    </MenuFlyout>
+                                </AppBarButton.Flyout>
+                            </AppBarButton>
+                        </Grid>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="42"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
-
-                        <CheckBox Name="CheckBox1" Grid.Column="0" VerticalAlignment="Center" Height="32" Width="32" Click="CheckBox_Click_1" />
-                        <Image Grid.Column="1" Source="Assets/background.jpg" Height="90" Width="90" Margin="0,3,12,7"/>
-                        <TextBlock Grid.Column="2" Text="完成作业" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal" FontSize="15" LineHeight="20" TextWrapping="Wrap" />
-                        <Line Name="Line1" Visibility="Collapsed" Grid.Column="2" Stretch="Fill" Stroke="Black" StrokeThickness="2" X1="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
-                        <AppBarButton Grid.Column="3" Icon="Setting" IsCompact="True" VerticalAlignment="Center">
-                            <AppBarButton.Flyout>
-                                <MenuFlyout>
-                                    <MenuFlyoutItem Text="Edit"/>
-                                    <MenuFlyoutItem Text="Delete"/>
-                                </MenuFlyout>
-                            </AppBarButton.Flyout>
-                        </AppBarButton>
-                    </Grid>
-                </StackPanel>
-            </ScrollViewer>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <Grid x:Name="ToDoListDetailView" Grid.Column="1" >
-                <ScrollViewer>
-                    <StackPanel>
-                        <Image  x:Name="selectPicture"  Source="Assets/background.jpg" Width="350" Height="180" Stretch="UniformToFill"/>
-                        <RelativePanel Width="350">
-                            <AppBarButton x:Name="SelectPictureButton" Icon="Pictures" Label="select" RelativePanel.AlignRightWithPanel="True" Click="SelectPictureButton_Click"/>
-                        </RelativePanel>
-                        <TextBox x:Name="title" Width="350" Header="Title" Margin="0,12,0,0" />
-                        <TextBox x:Name="details" Width="350" Height="96" Margin="0,12,0,0" Header="Details" />
-                        <DatePicker x:Name="datePicker" Width="350" Margin="0,12,0,0" Header="Due Date" HorizontalAlignment="Center" />
-                        <RelativePanel Width="350" Margin="0,24,0,0">
-                            <Button x:Name="createButton" Content="Create" Click="createButton_Click"></Button>
-                            <Button x:Name="CancelButton" Content="Cancel" RelativePanel.AlignRightWithPanel="True" Click="CancelButton_Click"></Button>
-                        </RelativePanel>
-                    </StackPanel>
-                </ScrollViewer>
+
+                <ListView Margin="20" ItemsSource="{x:Bind ViewModel.AllItems}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="md:TodoListItem">
+                            <Grid>
+                                <Image  x:Name="selectPicture"  Source="Assets/background.jpg" Width="350" Height="180" Stretch="UniformToFill"/>
+                                <RelativePanel Width="350">
+                                    <AppBarButton x:Name="SelectPictureButton" Icon="Pictures" Label="select" RelativePanel.AlignRightWithPanel="True" Click="SelectPictureButton_Click"/>
+                                </RelativePanel>
+                                <TextBox x:Name="title" Text="{x:Bind title}" Width="350" Header="Title" Margin="0,12,0,0" />
+                                <TextBox x:Name="details" Text="{x:Bind description}" Width="350" Height="96" Margin="0,12,0,0" Header="Details" />
+                                <DatePicker Date="{x:Bind date}" x:Name="datePicker" Width="350" Margin="0,12,0,0" Header="Due Date" HorizontalAlignment="Center" />
+                                <RelativePanel Width="350" Margin="0,24,0,0">
+                                    <Button x:Name="createButton" Content="Create" Click="createButton_Click"></Button>
+                                    <Button x:Name="CancelButton" Content="Cancel" RelativePanel.AlignRightWithPanel="True" Click="CancelButton_Click"></Button>
+                                </RelativePanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
+
         </Grid>
     </Grid>
 </Page>

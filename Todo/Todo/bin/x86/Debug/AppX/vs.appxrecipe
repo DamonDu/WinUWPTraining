@@ -28,13 +28,13 @@
     <AppXManifest Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-14T09:11:15.473</Modified>
+      <Modified>2017-03-15T09:40:37.374</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Debug\Todo.exe">
       <PackagePath>entrypoint\Todo.exe</PackagePath>
-      <Modified>2017-03-14T09:11:14.892</Modified>
+      <Modified>2017-03-15T09:40:34.348</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sy200\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -536,7 +536,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Debug\Todo.xr.xml">
       <PackagePath>Todo.xr.xml</PackagePath>
-      <Modified>2017-03-14T09:11:14.670</Modified>
+      <Modified>2017-03-15T09:37:06.004</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -545,11 +545,11 @@
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-14T09:11:15.241</Modified>
+      <Modified>2017-03-15T09:40:37.049</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Debug\Core\Todo.exe">
       <PackagePath>Todo.exe</PackagePath>
-      <Modified>2017-03-14T09:11:15.470</Modified>
+      <Modified>2017-03-15T09:40:37.371</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

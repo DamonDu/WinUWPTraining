@@ -76,6 +76,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="Icon" />
       <RootProperty Name="Label" />
+      <RootProperty Name="IsEnabled" />
       <RootProperty Name="IsCompact" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Flyout" />

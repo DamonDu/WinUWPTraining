@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
+using Todo.ViewModel;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -26,12 +27,15 @@ namespace Todo
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        TodoItemViewModel ViewModel;
+
         public MainPage()
         {
             this.InitializeComponent();
             var viewTitleBar = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().TitleBar;
             viewTitleBar.BackgroundColor = Windows.UI.Colors.ForestGreen;
             viewTitleBar.ButtonBackgroundColor = Windows.UI.Colors.ForestGreen;
+            ViewModel = new ViewModel.TodoItemViewModel();
         }
 
         private void AddAppBarButton_Click(object sender, RoutedEventArgs e)
