@@ -21,7 +21,7 @@
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="VisualStateMin0">
                     <VisualState.Setters>
-                        <Setter Target="ToDoListDetailView.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="ToDoListDetailView.(Visibility)" Value="Collapsed"/>
                         <Setter Target="ToDoListView.(Grid.ColumnSpan)" Value="2"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
@@ -52,57 +52,57 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <ScrollViewer Margin="20">
+                    <ListView  x:Name="ToDoListView" ItemsSource="{x:Bind ViewModel.AllItems}" IsItemClickEnabled="True" ItemClick="TodoItem_ItemClicked">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="md:TodoListItem">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="42"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
 
-            <ListView Margin="20" Grid.Column="0" x:Name="ToDoListView" ItemsSource="{x:Bind ViewModel.AllItems}">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="md:TodoListItem">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="42"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="100"/>
-                            </Grid.ColumnDefinitions>
-
-                            <CheckBox Name='CheckBox' Grid.Column="0" VerticalAlignment="Center" Height="32" Width="32" Click="CheckBox_Click" />
-                            <Image Grid.Column="1" Source="Assets/background.jpg" Height="90" Width="90" Margin="0,3,12,7"/>
-                            <TextBlock Grid.Column="2" Text="{x:Bind title}" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal" FontSize="15" LineHeight="20" TextWrapping="Wrap" />
-                            <Line Name="Line" Visibility="Collapsed" Grid.Column="2" Stretch="Fill" Stroke="Black" StrokeThickness="2" X1="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"  />
-                            <AppBarButton Grid.Column="3" Icon="Setting" IsCompact="True" VerticalAlignment="Center">
-                                <AppBarButton.Flyout>
-                                    <MenuFlyout>
-                                        <MenuFlyoutItem Text="Edit"/>
-                                        <MenuFlyoutItem Text="Delete"/>
-                                    </MenuFlyout>
-                                </AppBarButton.Flyout>
-                            </AppBarButton>
-                        </Grid>
-
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
+                                    <CheckBox Name='CheckBox' Grid.Column="0" VerticalAlignment="Center" Height="32" Width="32" />
+                                    <Image Grid.Column="1" Source="Assets/background.jpg" Height="90" Width="90" Margin="0,3,12,7"/>
+                                    <TextBlock Grid.Column="2" Text="{x:Bind title}" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal" FontSize="15" LineHeight="20" TextWrapping="Wrap" />
+                                    <Line Name="Line" Visibility="{Binding ElementName=CheckBox, Path=IsChecked,Mode=OneWay}" Grid.Column="2" Stretch="Fill" Stroke="Black" StrokeThickness="2" X1="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"  />
+                                    <TextBlock Grid.Column="3"  VerticalAlignment="Center" Foreground="Black" FontWeight="Normal" FontSize="15" LineHeight="20" TextWrapping="Wrap" />
+                                    <AppBarButton Grid.Column="4" Icon="Setting" IsCompact="True" VerticalAlignment="Center">
+                                        <AppBarButton.Flyout>
+                                            <MenuFlyout>
+                                                <MenuFlyoutItem Text="Edit"/>
+                                                <MenuFlyoutItem Text="Delete"/>
+                                            </MenuFlyout>
+                                        </AppBarButton.Flyout>
+                                    </AppBarButton>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
+            </Grid>
+            
             <Grid x:Name="ToDoListDetailView" Grid.Column="1" >
-
-                <ListView Margin="20" ItemsSource="{x:Bind ViewModel.AllItems}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="md:TodoListItem">
-                            <Grid>
-                                <Image  x:Name="selectPicture"  Source="Assets/background.jpg" Width="350" Height="180" Stretch="UniformToFill"/>
-                                <RelativePanel Width="350">
-                                    <AppBarButton x:Name="SelectPictureButton" Icon="Pictures" Label="select" RelativePanel.AlignRightWithPanel="True" Click="SelectPictureButton_Click"/>
-                                </RelativePanel>
-                                <TextBox x:Name="title" Text="{x:Bind title}" Width="350" Header="Title" Margin="0,12,0,0" />
-                                <TextBox x:Name="details" Text="{x:Bind description}" Width="350" Height="96" Margin="0,12,0,0" Header="Details" />
-                                <DatePicker Date="{x:Bind date}" x:Name="datePicker" Width="350" Margin="0,12,0,0" Header="Due Date" HorizontalAlignment="Center" />
-                                <RelativePanel Width="350" Margin="0,24,0,0">
-                                    <Button x:Name="createButton" Content="Create" Click="createButton_Click"></Button>
-                                    <Button x:Name="CancelButton" Content="Cancel" RelativePanel.AlignRightWithPanel="True" Click="CancelButton_Click"></Button>
-                                </RelativePanel>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                <ScrollViewer>
+                    <StackPanel>
+                        <Image  x:Name="selectPicture"  Source="Assets/background.jpg" Width="350" Height="180" Stretch="UniformToFill"/>
+                        <RelativePanel Width="350">
+                            <AppBarButton x:Name="SelectPictureButton" Icon="Pictures" Label="select" RelativePanel.AlignRightWithPanel="True" Click="SelectPictureButton_Click"/>
+                        </RelativePanel>
+                        <TextBox x:Name="title"  Width="350" Header="Title" Margin="0,12,0,0" AcceptsReturn="True" />
+                        <TextBox x:Name="details" Width="350" Height="96" Margin="0,12,0,0" Header="Details" />
+                        <DatePicker x:Name="datePicker"  Width="350" Margin="0,12,0,0" Header="Due Date" HorizontalAlignment="Center" />
+                        <RelativePanel Width="350" Margin="0,24,0,0">
+                            <Button x:Name="createButton" Content="Create" Click="createButton_Click"></Button>
+                            <Button x:Name="updateButton" Content="Update" Click="updateButton_Click" Visibility="Collapsed"></Button>
+                            <Button x:Name="CancelButton" Content="Cancel" RelativePanel.AlignRightWithPanel="True" Click="CancelButton_Click"></Button>
+                        </RelativePanel>
+                    </StackPanel>
+                </ScrollViewer>
             </Grid>
 
         </Grid>

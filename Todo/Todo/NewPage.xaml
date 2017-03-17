@@ -8,7 +8,9 @@
     mc:Ignorable="d">
 
     <Page.BottomAppBar>
-        <CommandBar></CommandBar>
+        <CommandBar>
+            <AppBarButton x:Name="delete_button" Icon="Delete" Label="delete" Click="delete_button_click"/>
+        </CommandBar>
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -27,11 +29,12 @@
                     <RelativePanel Width="350">
                         <AppBarButton x:Name="SelectPictureButton" Icon="Pictures" Label="select" RelativePanel.AlignRightWithPanel="True" Click="SelectPictureButton_Click"/>
                     </RelativePanel>
-                    <TextBox x:Name="title" Width="350" Header="Title" Margin="0,12,0,0" />
+                    <TextBox x:Name="title"  Width="350" Header="Title" Margin="0,12,0,0" AcceptsReturn="True" />
                     <TextBox x:Name="details" Width="350" Height="96" Margin="0,12,0,0" Header="Details" />
-                    <DatePicker x:Name="datePicker" Width="350" Margin="0,12,0,0" Header="Due Date" HorizontalAlignment="Center" />
+                    <DatePicker x:Name="datePicker"  Width="350" Margin="0,12,0,0" Header="Due Date" HorizontalAlignment="Center" />
                     <RelativePanel Width="350" Margin="0,24,0,0">
                         <Button x:Name="createButton" Content="Create" Click="createButton_Click"></Button>
+                        <Button x:Name="updateButton" Content="Update" Click="updateButton_Click" Visibility="Collapsed"></Button>
                         <Button x:Name="CancelButton" Content="Cancel" RelativePanel.AlignRightWithPanel="True" Click="CancelButton_Click"></Button>
                     </RelativePanel>
                 </StackPanel>

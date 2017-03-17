@@ -40,31 +40,7 @@ namespace Todo
 
         private void AddAppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(BlankPage1));
-        }
-
-        private void CheckBox_Click(object sender, RoutedEventArgs e)
-        {
-            if(CheckBox.IsChecked == true)
-            {
-                Line.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Line.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        private void CheckBox_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (CheckBox1.IsChecked == true)
-            {
-                Line1.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Line1.Visibility = Visibility.Collapsed;
-            }
+            this.Frame.Navigate(typeof(BlankPage1), ViewModel);
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -89,10 +65,25 @@ namespace Todo
             }
             else
             {
-                if (Frame.CanGoBack)
-                {
-                    Frame.GoBack();
-                }
+                ViewModel.AddTodoItem(title.Text, details.Text, datePicker.Date.DateTime);
+            }
+        }
+
+        private void updateButton_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime today = DateTime.Now;
+
+            if (title.Text == "" || details.Text == "")
+            {
+                displayTextErrorDialog();
+            }
+            else if (datePicker.Date < today)
+            {
+                displayDateErrorDialog();
+            }
+            else
+            {
+                ViewModel.UpdateTodoItem(title.Text, details.Text, datePicker.Date.DateTime);
             }
         }
 
@@ -142,5 +133,21 @@ namespace Todo
                 }
             }
         }
+
+        private void TodoItem_ItemClicked(object sender, ItemClickEventArgs e)
+        {
+            ViewModel.SelectedItem = (DataModel.TodoListItem)(e.ClickedItem);
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame.ActualWidth >= 800)
+            {
+                title.Text = ViewModel.SelectedItem.title;
+                details.Text = ViewModel.SelectedItem.description;
+                datePicker.Date = ViewModel.SelectedItem.date;
+                createButton.Visibility = Visibility.Collapsed;
+                updateButton.Visibility = Visibility.Visible;
+            }
+        }
+
+        
     }
 }
