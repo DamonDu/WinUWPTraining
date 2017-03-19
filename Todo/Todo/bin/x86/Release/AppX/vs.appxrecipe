@@ -28,7 +28,7 @@
     <AppXManifest Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Release\ilc\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-17T04:57:16.637</Modified>
+      <Modified>2017-03-17T08:05:13.584</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -77,19 +77,19 @@
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Release\ilc\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-17T04:56:58.271</Modified>
+      <Modified>2017-03-17T07:51:42.350</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Release\ilc\Todo.dll">
       <PackagePath>Todo.dll</PackagePath>
-      <Modified>2017-03-17T04:57:16.483</Modified>
+      <Modified>2017-03-17T08:05:13.404</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Release\ilc\Todo.exe">
       <PackagePath>Todo.exe</PackagePath>
-      <Modified>2017-03-17T04:57:16.624</Modified>
+      <Modified>2017-03-17T08:05:13.569</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\Todo\Todo\bin\x86\Release\ilc\Todo.pdb">
       <PackagePath>Todo.pdb</PackagePath>
-      <Modified>2017-03-17T04:57:16.615</Modified>
+      <Modified>2017-03-17T08:05:13.559</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

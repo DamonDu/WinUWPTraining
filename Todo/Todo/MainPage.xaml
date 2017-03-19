@@ -22,13 +22,13 @@
                 <VisualState x:Name="VisualStateMin0">
                     <VisualState.Setters>
                         <Setter Target="ToDoListDetailView.(Visibility)" Value="Collapsed"/>
-                        <Setter Target="ToDoListView.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="TodoGrid.(Grid.ColumnSpan)" Value="2"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="1"/>
                     </VisualState.StateTriggers>
                 </VisualState>
-                
+
                 <VisualState x:Name="VisualStateMin800">
                     <VisualState.Setters>
                         <Setter Target="AddAppBarButton.(Control.IsEnabled)" Value="False"/>
@@ -47,43 +47,39 @@
 
         <TextBlock x:Name="textBlock" Margin="10" Grid.Row="0" Text="Todos" Style="{StaticResource HeaderTextBlockStyle}"/>
 
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <ScrollViewer Margin="20">
-                    <ListView  x:Name="ToDoListView" ItemsSource="{x:Bind ViewModel.AllItems}" IsItemClickEnabled="True" ItemClick="TodoItem_ItemClicked">
-                        <ListView.ItemTemplate>
-                            <DataTemplate x:DataType="md:TodoListItem">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="42"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="100"/>
-                                    </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" x:Name="TodoGrid">
+                <ListView  x:Name="ToDoListView" ItemsSource="{x:Bind ViewModel.AllItems}" IsItemClickEnabled="True" ItemClick="TodoItem_ItemClicked">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="md:TodoListItem">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="42"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
 
-                                    <CheckBox Name='CheckBox' Grid.Column="0" VerticalAlignment="Center" Height="32" Width="32" />
-                                    <Image Grid.Column="1" Source="Assets/background.jpg" Height="90" Width="90" Margin="0,3,12,7"/>
-                                    <TextBlock Grid.Column="2" Text="{x:Bind title}" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal" FontSize="15" LineHeight="20" TextWrapping="Wrap" />
-                                    <Line Name="Line" Visibility="{Binding ElementName=CheckBox, Path=IsChecked,Mode=OneWay}" Grid.Column="2" Stretch="Fill" Stroke="Black" StrokeThickness="2" X1="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"  />
-                                    <TextBlock Grid.Column="3"  VerticalAlignment="Center" Foreground="Black" FontWeight="Normal" FontSize="15" LineHeight="20" TextWrapping="Wrap" />
-                                    <AppBarButton Grid.Column="4" Icon="Setting" IsCompact="True" VerticalAlignment="Center">
-                                        <AppBarButton.Flyout>
-                                            <MenuFlyout>
-                                                <MenuFlyoutItem Text="Edit"/>
-                                                <MenuFlyoutItem Text="Delete"/>
-                                            </MenuFlyout>
-                                        </AppBarButton.Flyout>
-                                    </AppBarButton>
-                                </Grid>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </ScrollViewer>
+                                <CheckBox Name='CheckBox' Grid.Column="0" VerticalAlignment="Center" Height="32" Width="32" />
+                                <Image x:Name="itemImage" Grid.Column="1" Source="Assets/background.jpg" Height="90" Width="90" Margin="0,3,12,7"/>
+                                <TextBlock Grid.Column="2" Text="{x:Bind title}" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal" FontSize="15" LineHeight="20" TextWrapping="Wrap"/>
+                                <Line Name="Line" Visibility="{Binding ElementName=CheckBox, Path=IsChecked,Mode=OneWay}" Grid.Column="2" Stretch="Fill" Stroke="Black" StrokeThickness="2" X1="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"  />
+                                <AppBarButton Grid.Column="3" Icon="Setting" IsCompact="True" VerticalAlignment="Center">
+                                    <AppBarButton.Flyout>
+                                        <MenuFlyout>
+                                            <MenuFlyoutItem Text="Edit"/>
+                                            <MenuFlyoutItem Text="Delete"/>
+                                        </MenuFlyout>
+                                    </AppBarButton.Flyout>
+                                </AppBarButton>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
             
             <Grid x:Name="ToDoListDetailView" Grid.Column="1" >

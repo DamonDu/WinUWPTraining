@@ -18,8 +18,8 @@ namespace Todo.ViewModel
 
         public TodoItemViewModel()
         {
-            this.allItems.Add(new TodoListItem("123", "123",DateTime.Now));
-            this.allItems.Add(new TodoListItem("456", "456", DateTime.Now));
+            this.allItems.Add(new TodoListItem("123", "123",DateTime.Today));
+            this.allItems.Add(new TodoListItem("456", "456", DateTime.Today));
         }
 
         public void AddTodoItem(string title, string description, DateTime date)
@@ -38,12 +38,15 @@ namespace Todo.ViewModel
 
         public void UpdateTodoItem(string title, string description, DateTime date)
         {
-            TodoListItem changeItem = new TodoListItem(title, description, date);
-            int index = allItems.IndexOf(selectedItem);
-            this.allItems.Remove(selectedItem);
-            this.allItems.Insert(index, changeItem);
-            changeItem.change_property();
-            this.selectedItem = null;
+            if(this.selectedItem != null)
+            {
+                TodoListItem changeItem = new TodoListItem(title, description, date);
+                int index = allItems.IndexOf(selectedItem);
+                this.allItems.Remove(selectedItem);
+                this.allItems.Insert(index, changeItem);
+                changeItem.change_property();
+                this.selectedItem = null;
+            }
         }
     }
 }

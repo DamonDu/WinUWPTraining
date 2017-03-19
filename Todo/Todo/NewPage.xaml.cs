@@ -33,14 +33,6 @@ namespace Todo
         }
         private ViewModel.TodoItemViewModel ViewModel;
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (Frame.CanGoBack)
-            {
-                Frame.GoBack();
-            }
-        }
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
@@ -76,7 +68,7 @@ namespace Todo
 
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
-            DateTime today = DateTime.Now;
+            DateTime today = DateTime.Today;
 
             if (title.Text == "" || details.Text == "")
             {
@@ -98,7 +90,7 @@ namespace Todo
 
         private void updateButton_Click(object sender, RoutedEventArgs e)
         {
-            DateTime today = DateTime.Now;
+            DateTime today = DateTime.Today;
 
             if (title.Text == "" || details.Text == "")
             {
@@ -115,6 +107,15 @@ namespace Todo
                 {
                     Frame.GoBack();
                 }
+            }
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectedItem = null;
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
             }
         }
 

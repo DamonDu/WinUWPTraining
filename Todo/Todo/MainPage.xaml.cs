@@ -45,6 +45,16 @@ namespace Todo
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
+            ViewModel.SelectedItem = null;
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame.ActualWidth >= 800)
+            {
+                title.Text = "";
+                details.Text = "";
+                datePicker.Date = DateTime.Today;
+                createButton.Visibility = Visibility.Visible;
+                updateButton.Visibility = Visibility.Collapsed;
+            }
             if (Frame.CanGoBack)
             {
                 Frame.GoBack();
@@ -53,7 +63,7 @@ namespace Todo
 
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
-            DateTime today = DateTime.Now;
+            DateTime today = DateTime.Today;
 
             if (title.Text == "" || details.Text == "")
             {
@@ -71,7 +81,7 @@ namespace Todo
 
         private void updateButton_Click(object sender, RoutedEventArgs e)
         {
-            DateTime today = DateTime.Now;
+            DateTime today = DateTime.Today;
 
             if (title.Text == "" || details.Text == "")
             {
