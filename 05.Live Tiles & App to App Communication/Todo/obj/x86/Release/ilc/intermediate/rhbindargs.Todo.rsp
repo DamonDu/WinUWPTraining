@@ -1,0 +1,15 @@
+/osver:6.2
+/appcontainer
+/runtime:mrt100_app
+/eh:clr
+/pdb
+"/nativelink:C:\Program Files (x86)\MSBuild\15.0\.Net\.NetNative\15.0.24209\x86\ilc\lib\Native\vmath.lib"
+/customImports
+/methodBodyFolding
+"F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\MDIL\Todo.mdilexe"
+"/i:F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\MDIL\"
+/out:"F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\Native\Todo.exe"
+"/res:F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\Native.res"
+"/i:C:\Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.3\1.3\x86\ret\MDIL"
+/shimexe
+/classlib:SharedLibrary
