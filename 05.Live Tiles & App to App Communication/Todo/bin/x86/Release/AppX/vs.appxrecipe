@@ -28,47 +28,47 @@
     <AppXManifest Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-29T08:32:11.685</Modified>
+      <Modified>2017-04-04T18:13:41.659</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Assets\background.jpg">
       <PackagePath>Assets\background.jpg</PackagePath>
-      <Modified>2017-03-08T17:44:24.589</Modified>
+      <Modified>2017-03-29T03:09:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2017-03-02T06:25:51.555</Modified>
+      <Modified>2017-03-29T03:09:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-02T06:25:51.555</Modified>
+      <Modified>2017-03-29T03:09:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-02T06:25:51.555</Modified>
+      <Modified>2017-03-29T03:09:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-02T06:25:51.555</Modified>
+      <Modified>2017-03-29T03:09:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-02T06:25:51.555</Modified>
+      <Modified>2017-03-29T03:09:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-02T06:25:51.555</Modified>
+      <Modified>2017-03-29T03:09:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-02T06:25:51.555</Modified>
+      <Modified>2017-03-29T03:09:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
@@ -77,19 +77,19 @@
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-29T08:31:14.530</Modified>
+      <Modified>2017-04-04T18:12:52.061</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Todo.dll">
       <PackagePath>Todo.dll</PackagePath>
-      <Modified>2017-03-29T08:32:11.048</Modified>
+      <Modified>2017-04-04T18:13:41.432</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Todo.exe">
       <PackagePath>Todo.exe</PackagePath>
-      <Modified>2017-03-29T08:32:11.294</Modified>
+      <Modified>2017-04-04T18:13:41.641</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CODE\WinUWPTraining\05.Live Tiles &amp; App to App Communication\Todo\bin\x86\Release\ilc\Todo.pdb">
       <PackagePath>Todo.pdb</PackagePath>
-      <Modified>2017-03-29T08:32:11.283</Modified>
+      <Modified>2017-04-04T18:13:41.630</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

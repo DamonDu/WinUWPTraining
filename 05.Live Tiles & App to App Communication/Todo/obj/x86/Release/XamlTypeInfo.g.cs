@@ -132,21 +132,23 @@ namespace Todo.Todo_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
+            _typeNameTable = new string[7];
             _typeNameTable[0] = "Todo.BlankPage1";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Todo.Models.BoolToVisibilityConverter";
             _typeNameTable[4] = "Object";
             _typeNameTable[5] = "Todo.MainPage";
+            _typeNameTable[6] = "Todo.ViewModels.TodoItemViewModel";
 
-            _typeTable = new global::System.Type[6];
+            _typeTable = new global::System.Type[7];
             _typeTable[0] = typeof(global::Todo.BlankPage1);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Todo.Models.BoolToVisibilityConverter);
             _typeTable[4] = typeof(global::System.Object);
             _typeTable[5] = typeof(global::Todo.MainPage);
+            _typeTable[6] = typeof(global::Todo.ViewModels.TodoItemViewModel);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -184,6 +186,7 @@ namespace Todo.Todo_XamlTypeInfo
         private object Activate_0_BlankPage1() { return new global::Todo.BlankPage1(); }
         private object Activate_3_BoolToVisibilityConverter() { return new global::Todo.Models.BoolToVisibilityConverter(); }
         private object Activate_5_MainPage() { return new global::Todo.MainPage(); }
+        private object Activate_6_TodoItemViewModel() { return new global::Todo.ViewModels.TodoItemViewModel(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -224,6 +227,14 @@ namespace Todo.Todo_XamlTypeInfo
             case 5:   //  Todo.MainPage
                 userType = new global::Todo.Todo_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_5_MainPage;
+                userType.AddMemberName("ViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  Todo.ViewModels.TodoItemViewModel
+                userType = new global::Todo.Todo_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -232,11 +243,31 @@ namespace Todo.Todo_XamlTypeInfo
         }
 
 
+        private object get_0_MainPage_ViewModel(object instance)
+        {
+            var that = (global::Todo.MainPage)instance;
+            return that.ViewModel;
+        }
+        private void set_0_MainPage_ViewModel(object instance, object Value)
+        {
+            var that = (global::Todo.MainPage)instance;
+            that.ViewModel = (global::Todo.ViewModels.TodoItemViewModel)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::Todo.Todo_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::Todo.Todo_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "Todo.MainPage.ViewModel":
+                userType = (global::Todo.Todo_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Todo.MainPage");
+                xamlMember = new global::Todo.Todo_XamlTypeInfo.XamlMember(this, "ViewModel", "Todo.ViewModels.TodoItemViewModel");
+                xamlMember.Getter = get_0_MainPage_ViewModel;
+                xamlMember.Setter = set_0_MainPage_ViewModel;
+                break;
+            }
             return xamlMember;
         }
     }

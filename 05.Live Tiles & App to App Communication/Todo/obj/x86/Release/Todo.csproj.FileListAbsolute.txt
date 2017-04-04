@@ -384,3 +384,14 @@ F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Rel
 F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\Todo.McgInterop\SharedStubs.g.cs
 F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\TransformedSRWR\System.Runtime.WindowsRuntime.dll
 F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\TransformedSRWR\System.Runtime.WindowsRuntime.dll.ILTransformTask.repro
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\bin\x86\Release\NotificationsExtensions.Win10.dll
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\bin\x86\Release\NotificationsExtensions.Win10.pdb
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\in\NotificationsExtensions.Win10.pdb
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\in\NotificationsExtensions.Win10.dll
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\NotificationsExtensions.Win10.ildll
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\NotificationsExtensions.Win10.ilpdb
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.Threading.Tasks.Extensions.ildll
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.Xml.ReaderWriter.ildll
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\PreMergeILTransformed\.ILTransformTask.repro
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\PreMergeILTransformed\NotificationsExtensions.Win10.dll
+F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\PreMergeILTransformed\NotificationsExtensions.Win10.pdb

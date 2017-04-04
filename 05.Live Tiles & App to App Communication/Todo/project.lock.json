@@ -284,6 +284,15 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NotificationsExtensions.Win10/14332.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
+        }
+      },
       "runtime.native.System.IO.Compression/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -2370,6 +2379,15 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "NotificationsExtensions.Win10/14332.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
         }
       },
       "runtime.any.System.Collections/4.0.11": {
@@ -4619,6 +4637,15 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "NotificationsExtensions.Win10/14332.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
         }
       },
       "runtime.aot.System.Collections/4.0.10": {
@@ -6910,6 +6937,15 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NotificationsExtensions.Win10/14332.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -9166,6 +9202,15 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "NotificationsExtensions.Win10/14332.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
         }
       },
       "runtime.aot.System.Collections/4.0.10": {
@@ -11463,6 +11508,15 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NotificationsExtensions.Win10/14332.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
+        }
+      },
       "runtime.any.System.Collections/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -13719,6 +13773,15 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "NotificationsExtensions.Win10/14332.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.Win10.dll": {}
         }
       },
       "runtime.aot.System.Collections/4.0.10": {
@@ -16084,6 +16147,30 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "NotificationsExtensions.Win10/14332.0.2": {
+      "sha512": "UN5yNMpYIs06ULFSGkNYINN/ZtqK19wt3IbotUvH7rlGPVOcbvNvM2Jzxs9wZAolX97L5/Y4u+6twFP0oeXk2A==",
+      "type": "package",
+      "path": "notificationsextensions.win10/14332.0.2",
+      "files": [
+        "build/native/NotificationsExtensions.Win10.targets",
+        "lib/dotnet/NotificationsExtensions.Win10.dll",
+        "lib/dotnet/NotificationsExtensions.Win10.pdb",
+        "lib/dotnet/NotificationsExtensions.Win10.xml",
+        "lib/native/NotificationsExtensions.pdb",
+        "lib/native/NotificationsExtensions.pri",
+        "lib/native/NotificationsExtensions.winmd",
+        "lib/native/NotificationsExtensions.winmd.xml",
+        "lib/native/NotificationsExtensions.xml",
+        "lib/portable-net45+sl50+win+wpa81+wp80/NotificationsExtensions.Win10.dll",
+        "lib/portable-net45+sl50+win+wpa81+wp80/NotificationsExtensions.Win10.pdb",
+        "lib/portable-net45+sl50+win+wpa81+wp80/NotificationsExtensions.Win10.xml",
+        "lib/uap10.0/NotificationsExtensions.Win10.XML",
+        "lib/uap10.0/NotificationsExtensions.Win10.dll",
+        "lib/uap10.0/NotificationsExtensions.Win10.pdb",
+        "notificationsextensions.win10.14332.0.2.nupkg.sha512",
+        "notificationsextensions.win10.nuspec"
       ]
     },
     "runtime.any.System.Collections/4.0.11": {
@@ -21953,7 +22040,8 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2"
+      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
+      "NotificationsExtensions.Win10 >= 14332.0.2"
     ],
     "UAP,Version=v10.0": []
   },
@@ -21969,7 +22057,8 @@
       "projectStyle": "ProjectJson"
     },
     "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+      "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+      "NotificationsExtensions.Win10": "14332.0.2"
     },
     "frameworks": {
       "uap10.0": {}

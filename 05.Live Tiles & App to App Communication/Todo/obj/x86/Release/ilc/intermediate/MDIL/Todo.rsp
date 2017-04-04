@@ -8,6 +8,7 @@
 /multiFile
 /sharedGenericsMode StandardUniversalGenericsHeuristics
 /in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\Todo.ilexe"
+/in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\NotificationsExtensions.Win10.ildll"
 /in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.AppContext.ildll"
 /in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.Collections.NonGeneric.ildll"
 /in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.ComponentModel.ildll"
@@ -48,8 +49,10 @@
 /in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.Text.Encoding.ildll"
 /in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.Threading.ildll"
 /in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.Threading.Overlapped.ildll"
+/in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.Threading.Tasks.Extensions.ildll"
 /in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.Threading.Tasks.ildll"
 /in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.Threading.Tasks.Parallel.ildll"
+/in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\System.Xml.ReaderWriter.ildll"
 /in "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\ILTransformed\Todo.McgInterop.ildll"
 /out "F:\CODE\WinUWPTraining\05.Live Tiles & App to App Communication\Todo\obj\x86\Release\ilc\intermediate\MDIL\Todo.mdilexe"
 /iltoc "C:\Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.3\1.3\x86\ret\ILToc\System.Collections.iltoc*SharedLibrary"

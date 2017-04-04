@@ -97,6 +97,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\BoolToVisibilityConverter.cs" />
+    <Compile Include="Models\TodoItem.cs" />
     <Compile Include="NewPage.xaml.cs">
       <DependentUpon>NewPage.xaml</DependentUpon>
     </Compile>
