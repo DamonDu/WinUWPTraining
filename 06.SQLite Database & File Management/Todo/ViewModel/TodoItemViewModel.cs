@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using System.Linq;
 using Todo.Models;
 
@@ -15,6 +17,7 @@ namespace Todo.ViewModels
         public TodoItem NewestItem { get; set; }
 
         public TodoItemViewModel() { }
+
 
         public void AddTodoItem(Models.TodoItem todo)
         {

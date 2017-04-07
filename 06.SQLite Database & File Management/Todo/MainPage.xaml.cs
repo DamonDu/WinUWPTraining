@@ -11,6 +11,7 @@ using Windows.UI.Notifications;
 using NotificationsExtensions.Tiles;
 using Windows.UI.Popups;
 using Windows.ApplicationModel.DataTransfer;
+using Windows.Storage;
 using Windows.Storage.Streams;
 using SQLitePCL;
 using System.Collections.Generic;
@@ -37,6 +38,8 @@ namespace Todo
 
         public ViewModels.TodoItemViewModel ViewModel { get; set; }
         private string currentId { get; set; }
+        private Services.DBService db { get; set; }
+
 
         private void AddTodoButton_Click(object sender, RoutedEventArgs e)
         {
@@ -132,6 +135,19 @@ namespace Todo
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            if (e.NavigationMode == NavigationMode.New)
+            {
+                ApplicationData.Current.LocalSettings.Values.Remove("LastWork");
+            }
+            else
+            {
+                if (ApplicationData.Current.LocalSettings.Values.ContainsKey("LastWork"))
+                {
+                    var compositeValue = ApplicationData.Current.LocalSettings.Values["LastWork"] as ApplicationDataCompositeValue;
+                    this.ViewModel = (ViewModels.TodoItemViewModel)compositeValue["viewModel"];
+                    ApplicationData.Current.LocalSettings.Values.Remove("LastWork");
+                }
+            }
             if (e.Parameter.GetType() == typeof(ViewModels.TodoItemViewModel))
             {
                 this.ViewModel = e.Parameter as ViewModels.TodoItemViewModel;
@@ -141,6 +157,12 @@ namespace Todo
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            if (((App)App.Current).IsSuspending)
+            {
+                var compositeValue = new ApplicationDataCompositeValue();
+                compositeValue["viewModel"] = this.ViewModel;
+                ApplicationData.Current.LocalSettings.Values["LastWork"] = compositeValue;
+            }
             DataTransferManager.GetForCurrentView().DataRequested -= OnShareDataRequested;
         }
 

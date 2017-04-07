@@ -23,13 +23,13 @@ namespace Todo
         {
             this.InitializeComponent();
             ViewModel = new ViewModels.TodoItemViewModel();
+            db = new Services.DBService();
         }
 
         private ViewModels.TodoItemViewModel ViewModel;
-
         private ShareOperation shareOp;
-
         private StorageFile ImageFile;
+        private Services.DBService db { get; set; }
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -76,6 +76,7 @@ namespace Todo
                 {
                     ViewModel.AddTodoItem(TodoToCreate);
                     ViewModel.NewestItem = TodoToCreate;
+                    db.CreateItem(TodoToCreate);
                     Frame.Navigate(typeof(MainPage), ViewModel);
                 }
             }
@@ -100,6 +101,7 @@ namespace Todo
                     ViewModel.NewestItem = ViewModel.AllItems[0];
                 else
                     ViewModel.NewestItem = null;
+                db.DeleteById(ViewModel.SelectedItem.Id);
                 Frame.Navigate(typeof(MainPage), ViewModel);
             }
         }
@@ -118,6 +120,7 @@ namespace Todo
                 {
                     ViewModel.UpdateTodoItem(ViewModel.SelectedItem, TodoToUpdate);
                     ViewModel.NewestItem = TodoToUpdate;
+                    db.UpdateItem(TodoToUpdate);
                     Frame.Navigate(typeof(MainPage), ViewModel);
                 }
             }

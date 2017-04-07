@@ -13,9 +13,9 @@ namespace Todo.Services
     {
         private void LoadDatabase()
         {
-            conn = new SQLiteConnection("Todos.db");
+            conn = new SQLiteConnection("Todo.db");
             string sql = @"CREATE TABLE IF NOT EXISTS "
-                          + "Todos (TableId    INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
+                          + "Todo (TableId    INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
                                 + "ItemId      VARCHAR(140),"
                                 + "Title       VARCHAR(140),"
                                 + "Description VARCHAR(140),"
@@ -42,7 +42,7 @@ namespace Todo.Services
         {
             try
             {
-                string sql = "INSERT INTO Todos (ItemId, Title, Description, Date) VALUES (?, ?, ?, ?)";
+                string sql = "INSERT INTO Todo (ItemId, Title, Description, Date) VALUES (?, ?, ?, ?)";
                 using (var statement = conn.Prepare(sql))
                 {
                     statement.Bind(1, TodoToCreate.Id);
@@ -58,9 +58,32 @@ namespace Todo.Services
             }
         }
 
+        public List<Models.DisplayItem> GetAllItems()
+        {
+            string sql = "SELECT * FROM Todo";
+            using (var statement = conn.Prepare(sql))
+            {
+                List<Models.DisplayItem> res = new List<Models.DisplayItem>();
+                if (res.Count > 0) { }
+                Models.DisplayItem tmp;
+                while (statement.Step() == SQLiteResult.ROW)
+                { // get result of one row
+                    tmp = new Models.DisplayItem()
+                    {
+                        Id = (Int64)statement[0],
+                        Title = (string)statement[1],
+                        Description = (string)statement[2],
+                        Date = (string)statement[3]
+                    };
+                    res.Add(tmp);
+                }
+                return res;
+            }
+        }
+
         public List<Models.DisplayItem> GetItemsByStr(string str)
         {
-            string sql = "SELECT TableId, Title, Description, Date FROM Todos "
+            string sql = "SELECT TableId, Title, Description, Date FROM Todo "
               + "WHERE Title LIKE ? OR Description LIKE ? OR Date LIKE ?";
             int i, searchKeyNum = 3;
             using (var statement = conn.Prepare(sql))
@@ -88,7 +111,7 @@ namespace Todo.Services
 
         public void UpdateItem(Models.TodoItem TodoToUpdate)
         {
-            string sql = "UPDATE Todos SET Title = ?, Description = ?, Date = ? WHERE ItemId = ?";
+            string sql = "UPDATE Todo SET Title = ?, Description = ?, Date = ? WHERE ItemId = ?";
             using (var custstmt = conn.Prepare(sql))
             {
                 custstmt.Bind(1, TodoToUpdate.Title);
@@ -101,7 +124,7 @@ namespace Todo.Services
 
         public void DeleteById(string itemId)
         {
-            string sql = "DELETE FROM Todos WHERE ItemId = ?";
+            string sql = "DELETE FROM Todo WHERE ItemId = ?";
             using (var statement = conn.Prepare(sql))
             {
                 statement.Bind(1, itemId);
@@ -109,3 +132,4 @@ namespace Todo.Services
             }
         }
     }
+}
